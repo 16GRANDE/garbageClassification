@@ -1,12 +1,12 @@
 const rq = require('request-promise')
-// 
+//
 /**
  * 获取百度ai AccessToken
  */
 exports.main = async(event, context) => {
-  let apiKey = 'pwYEoTeV9AZpGNEUI5B2cfnp',
+  let apiKey = '',
     grantType = 'client_credentials',
-    secretKey = 'YmuoGabFAKQQQ5OV1fMvy6Z6r86TG0Ay',
+    secretKey = '',
     url = `https://aip.baidubce.com/oauth/2.0/token`
 
    return  await rq({
@@ -28,7 +28,7 @@ exports.main = async(event, context) => {
         console.log(error)
         if (!error.code){
           return Promise.reject(error)
-        } 
+        }
         return error
       })
 }
